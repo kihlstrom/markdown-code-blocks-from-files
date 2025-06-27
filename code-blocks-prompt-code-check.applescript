@@ -22,20 +22,20 @@ on getFileParts(fullPath)
 		set fileType to fileName
 	end if
 
-	if fileExtension = ¬
-		"js" or fileExtension = ¬
-		"jsx" or fileExtension = ¬
-		"mjs" or fileExtension = ¬
-		"cjs" or fileExtension = ¬
-		"mjsx" or fileExtension = "cjsx" then
+	if fileExtension = "js" ¬
+	or fileExtension = "jsx" ¬
+	or fileExtension = "mjs" ¬
+	or fileExtension = "cjs" ¬
+	or fileExtension = "mjsx" ¬
+	or fileExtension = "cjsx" then
 		set fileType to "javascript"
 
-	else if fileExtension = ¬
-		"ts" or fileExtension = ¬
-		"tsx" or fileExtension = ¬
-		"mts" or fileExtension = ¬
-		"cts" or fileExtension = ¬
-		"mtsx" or fileExtension = "ctsx" then
+	else if fileExtension = "ts" ¬
+	or fileExtension = "tsx" ¬
+	or fileExtension = "mts" ¬
+	or fileExtension = "cts" ¬
+	or fileExtension = "mtsx" ¬
+	or fileExtension = "ctsx" then
 		set fileType to "typescript"
 
 	else if fileExtension = "scss" then
@@ -47,24 +47,24 @@ on getFileParts(fullPath)
 	else if fileExtension = "py" then
 		set fileType to "python"
 
-	else if fileExtension = ¬
-		"yml" or fileExtension = "yaml" then
+	else if fileExtension = "yml" ¬
+	or fileExtension = "yaml" then
 		set fileType to "yaml"
 
-	else if fileExtension = ¬
-		"gql" or fileExtension = "graphql" then
+	else if fileExtension = "gql" ¬
+	or fileExtension = "graphql" then
 		set fileType to "graphql"
 
-	else if fileExtension = ¬
-		"md" or fileExtension = "markdown" then
+	else if fileExtension = "md" ¬
+	or fileExtension = "markdown" then
 		set fileType to "markdown"
 
 	else if fileExtension = "txt" then
 		set fileType to "text"
 
-	else if fileExtension = ¬
-		"env" or fileName = ¬
-		".env" or nameOnly = ".env" then
+	else if fileExtension = "env" ¬
+	or fileName = ".env" ¬
+	or nameOnly = ".env" then
 		set fileType to "sh"
 
 	end if
@@ -91,16 +91,16 @@ on getCodeBlockStart(codeBlockDelimiter, fileType, fileName)
 	set NEWLINE to ASCII character 10
 	set fileNameComment to ""
 
-	if fileType = ¬
-		"javascript" or fileType = ¬
-		"typescript" or fileType = "scss" then
+	if fileType = "javascript" ¬
+	or fileType = "typescript" ¬
+	or fileType = "scss" then
 		set fileNameComment to "// " & fileName
 
 	else if fileType = "css" then
 		set fileNameComment to "/* " & fileName & " */"
 
-	else if fileType = ¬
-		"python" or fileType = "sh" then
+	else if fileType = "python" ¬
+	or fileType = "sh" then
 		set fileNameComment to "# " & fileName
 
 	else if fileType = "text" then
